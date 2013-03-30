@@ -172,7 +172,7 @@ def index():
     if access_token:
 
         me = fb_call('me', args={'access_token': access_token})
-        fb_app = fb_call(FB_APP_ID, args={'access_token': access_token})
+        fb_app = fb_call(FB_APP_ID, args={'access_token': access_token, 'limit': 0})
         #likes = fb_call('me/likes',
         #                args={'access_token': access_token, 'limit': 4})
         friends = fb_call('me/friends',
