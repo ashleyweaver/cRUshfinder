@@ -40,6 +40,7 @@ header {
   border-top: 1px solid #b3b3b3;
   font-size: 11px;
   padding: 24px 18px;
+  background-color: silver;
 }
 
 header h1 {
