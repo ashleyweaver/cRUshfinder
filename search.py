@@ -4,7 +4,7 @@ from operator import itemgetter
 
 def main(nam,fromDate):
 	names = string.split(string.lower(nam))
-	f = open("ru_crushes-clean.json","r")
+	f = open("cache.json","r")
 	postList = json.load(f)
 	f.close()
 	
