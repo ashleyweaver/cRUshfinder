@@ -213,7 +213,8 @@ def close():
 
 @app.route('/search', methods=['GET'])
 def search():
-	print search.main(request.args[data])
+#	print search.main(request.args[data])
+	print "yup"
 	return
 
 if __name__ == '__main__':
