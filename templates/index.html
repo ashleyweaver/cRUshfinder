@@ -57,6 +57,7 @@
 	<script type="text/javascript">
 		
 		$("#searchButton").click(function(){
+			$("#output").empty();
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
 			$.ajax({
 				url:"/search",
@@ -86,6 +87,7 @@
 	</script>
 	<script type="text/javascript">
 		$("#searchAllButton").click(function(){
+			$("#output").empty();
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
 			{% for friend in friends.data %}
 				$.ajax({
