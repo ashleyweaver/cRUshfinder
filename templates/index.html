@@ -65,8 +65,8 @@
 							success: function(data){
 									var embed = $.parseJSON(data);
 								$('#output').append(embed.html);	
-						});
-					}
+						};
+					});
 					console.log(decodedJson);
 					$("#output").text(decodedJson);
 				});
