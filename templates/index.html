@@ -53,8 +53,7 @@
 			//	type: 'POST',
 				data:[
 					data: $("#searchField").val()
-				],
-				success: function(data){
+				]).done(function(data){
 					//var decodedJson = $.parseJSON(data);
 					var decodedJson = "lol";
 					// do stuff with the decoded data
