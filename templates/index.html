@@ -44,25 +44,24 @@
 	</section>
 	<div id="output">test</div>
 	{% endblock %}
-<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
-<script type="text/javascript">
+	<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+	<script type="text/javascript">
 	alert("alert!");
-	$("#searchButton").click(function(){
-		alert("click");
-		$.ajax([
-			url:"/search",
-			type: 'POST',
-			data:[
-				data: $("#searchField").val()
-			],
-			success: function(data){
-				//var decodedJson = $.parseJSON(data);
-				var decodedJson = "lol";
-				// do stuff with the decoded data
-				$("#output").val(decodedJson);
-			}
-		]);
-	});
-</script>
-
+		$("#searchButton").click(function(){
+			alert("click");
+			$.ajax([
+				url:"/search",
+				type: 'POST',
+				data:[
+					data: $("#searchField").val()
+				],
+				success: function(data){
+					//var decodedJson = $.parseJSON(data);
+					var decodedJson = "lol";
+					// do stuff with the decoded data
+					$("#output").val(decodedJson);
+				}
+			]);
+		});
+	</script>
 </body>
