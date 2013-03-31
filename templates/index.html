@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<head>
+	function search() {
+		<!--do stuff-->
+	}
 <body style="background-color: #5f6a72">
   {% extends "base.html" %}
 
@@ -40,7 +45,7 @@
 		</div>
 		<form action="demo_form.asp">
 			<input type="text" name="Name" value="Name" style="border-margin: 5px"><br>
-			<input type="submit" value="Submit" style="border-margin: 5px">
+			<button onClick="search()" style="border-margin: 5px">Search</button>
 		</form>
 	</section>
 	{% endblock%}
