@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+</head>
 <body style="background-color: #5f6a72">
   {% extends "base.html" %}
 
@@ -39,9 +41,9 @@
 				{% endfor %}
 			</ul>
 		</div>
-		<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px" />
+		<input type="text" name="SearchField" id="searchField" style="border-margin: 5px" hint="Name or Keyword" /> 
 		<button id="searchButton">Search</button>
-		<label><input type="checkbox" id="checkbox" />Exact matches only?</label>
+		<label><input type="checkbox" id="checkbox" style="color: #656565"/>Exact matches only?</label>
 		<div>
 			<p></p>
 			<button id="searchAllButton">Search all Facebook friends</button>
@@ -53,12 +55,11 @@
 		</div>
 	</div>
 	<div id="output"></div>
-	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+
 	<script type="text/javascript">
-		
 		$("#searchButton").click(function(){
+			$("#output").empty();
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
-			alert(($("#checkbox")).is(":checked")?1:0)
 			$.ajax({
 				url:"/search",
 				type: 'GET',
@@ -84,6 +85,38 @@
 					$("#output").text(decodedJson);
 				}});
 		});
+	</script>
+	<script type="text/javascript">
+		$("#searchAllButton").click(function(){
+			$("#output").empty();
+			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
+			{% for friend in friends.data %}
+				$.ajax({
+					url:"/search",
+					type: 'GET',
+					data:{
+						data: '{{friend.name}}',
+						exact: 'True'
+					},
+					error:function(){ 
+						console.log("error");
+					}}).done(function(data){
+						var decodedJson = $.parseJSON(data);
+						for(var i = 0; i < decodedJson.length; i++)
+						{
+							$.ajax({
+								url: baseUrl + "?id=" + decodedJson[i],
+									dataType: 'jsonp',
+									crossDomain: true,
+								success: function(data){
+									$('#output').append(data.html);	
+							}
+						});
+						console.log(decodedJson);
+						$("#output").text(decodedJson);
+					}});
+			{% endfor %}
+			});
 	</script>
 	{% endblock %}
 </body>
