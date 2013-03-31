@@ -58,7 +58,6 @@
 		
 		$("#searchButton").click(function(){
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
-			alert(($("#checkbox")).is(":checked")?1:0)
 			$.ajax({
 				url:"/search",
 				type: 'GET',
@@ -85,6 +84,38 @@
 				}});
 		});
 	</script>
+	<script type="text/javascript">
+		$("#searchAllButton").click(function(){
+			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
+			{% for friend in friends.data %}
+				$.ajax({
+					url:"/search",
+					type: 'GET',
+					data:{
+						data: {{friend.name}},
+						exact: 'True'
+					},
+					error:function(){ 
+						console.log("error");
+					}}).done(function(data){
+						var decodedJson = $.parseJSON(data);
+						for(var i = 0; i < decodedJson.length; i++)
+						{
+							$.ajax({
+								url: baseUrl + "?id=" + decodedJson[i],
+									dataType: 'jsonp',
+									crossDomain: true,
+								success: function(data){
+									$('#output').append(data.html);	
+							}
+						});
+						console.log(decodedJson);
+						$("#output").text(decodedJson);
+					}});
+			{% endfor %}
+			});
+	</script>
+
 	{% endblock %}
 </body>
 
