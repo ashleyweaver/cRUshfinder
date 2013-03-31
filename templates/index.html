@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<head>
-</head>
+<head></head>
 <body style="background-color: #5f6a72">
   {% extends "base.html" %}
 
@@ -8,7 +7,7 @@
 	<!-- By passing a valid access token here, we are able to display -->
 	<!-- the user's images without having to download or prepare -->
 	<!-- them ahead of time -->
-	<div>
+	<div style="color: #c0c0c0">
 		<p></p>
 		<h1 style="text-align: center; font-size: 50px; font-family: sans-serif; color: black">c<span style="color: #d21034">RU</span>sh finder</h1>
 	</div>
@@ -28,7 +27,7 @@
 
 	{% block content %}
 	<section class="clearfix" id="samples" style="text-align: center">
-		<h1>Search for Your Friends on Rutgers Crushes!</h1>
+		<h1>Search for your Friends on Rutgers Crushes!</h1>
 		<div class="list">
 			<h3>A few of your friends</h3>
 			<ul class="friends">{% for friend in friends.data %}
