@@ -41,7 +41,7 @@
 				{% endfor %}
 			</ul>
 		</div>
-		<input type="text" name="SearchField" id="searchField" style="border-margin: 5px" hint="Name or Keyword" /> 
+		<input class="input" type="text" name="searchField" id="searchField" data-watermark="Name/Keyword" />
 		<button id="searchButton">Search</button>
 		<label><input type="checkbox" id="checkbox" style="color: #656565"/>Exact matches only?</label>
 		<div>
@@ -117,6 +117,20 @@
 					}});
 			{% endfor %}
 			});
+	</script>
+	<script>
+		$(document).ready(function () {
+			$(":input[data-watermark]").each(function () {
+				$(this).val($(this).attr("data-watermark"));
+				$(this).bind('focus', function () {
+					if ($(this).val() == $(this).attr("data-watermark")) $(this).val('');
+				});
+				$(this).bind('blur', function () {
+				if ($(this).val() == '') $(this).val($(this).attr("data-watermark"));
+				$(this).css('color','#a8a8a8');
+				});
+			});
+		});
 	</script>
 	{% endblock %}
 </body>
