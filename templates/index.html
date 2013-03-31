@@ -66,7 +66,7 @@
 								crossDomain: true,
 							success: function(data){
 									var embed = $.parseJSON(data);
-								console.log('data is ' + data);
+								console.log(data);
 								console.log('embed is ' + embed);
 								$('#output').append(embed.html);	
 						}
