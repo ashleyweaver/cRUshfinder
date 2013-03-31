@@ -211,7 +211,7 @@ def get_channel():
 def close():
     return render_template('close.html')
 
-@app.route('/search/', methods=['POST'])
+@app.route('/search', methods=['GET'])
 def search():
 	print search.main(request.args[data])
 	return
