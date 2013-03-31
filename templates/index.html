@@ -35,11 +35,12 @@
 							{{friend.name}}
 					</a>
 				</li>
+				{% endfor %}
 			</ul>
 		</div>
 		<form action="demo_form.asp">
-			<input type="text" name="Name" value="Name"><br>
-		<input type="submit" value="Search">
+			<input type="text" name="Name" value="Name" style="border-margin: 5px"><br>
+			<input type="submit" value="Submit" style="border-margin: 5px">
 		</form>
 	</section>
 	{% endblock%}
