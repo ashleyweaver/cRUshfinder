@@ -8,7 +8,7 @@
 	<!-- the user's images without having to download or prepare -->
 	<!-- them ahead of time -->
 	<div>
-		<h1 style="text-align: center; font-size: 50px; font-family: sans-serif; color: black">c<span style="color: #d21034">RU</span>sh finder</h1>
+		<h1 style="text-align: center; font-size: 50px; font-family: sans-serif; color: black">c<span style="color: #d21034; font-weight: bold">RU</span>sh finder</h1>
 	</div>
 	<div style="text-align: center">
 		<div id="share-app">
@@ -21,7 +21,7 @@
 			</ul>
 		</div>
 	</div>
-	{% endblock%}
+	{% endblock %}
 
 
 	{% block content %}
@@ -41,9 +41,10 @@
 		</div>
 		<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px"><br>
 		<button  style="border-margin: 5px" id="searchButton">Search</button>
-		<div id="output"></div>
+		
 	</section>
-	{% endblock%}
+	<div id="output">test</div>
+	{% endblock %}
 </body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
@@ -54,9 +55,10 @@
 				data: $("#searchField").val()
 			],
 			success: function(data){
-				var decodedJson = $.parseJSON(data);
-				$('#output').load(decodedJson);
+				//var decodedJson = $.parseJSON(data);
+				var decodedJson = "lol";
 				// do stuff with the decoded data
+				$("#output").val(decodedJson);
 			}
 		]);
 	});

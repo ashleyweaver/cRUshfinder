@@ -176,7 +176,7 @@ def index():
         me = fb_call('me', args={'access_token': access_token})
         fb_app = fb_call(FB_APP_ID, args={'access_token': access_token})
         friends = fb_call('me/friends',
-                          args={'access_token': access_token, 'limit': 5})
+                          args={'access_token': access_token, 'limit': 0})
 
         redir = get_home() + 'close/'
         POST_TO_WALL = ("https://www.facebook.com/dialog/feed?redirect_uri=%s&"
@@ -211,14 +211,14 @@ def get_channel():
 def close():
     return render_template('close.html')
 
+@app.route('/search/', methods=['POST'])
+def search():
+	print search.main(request.args[data])
+	return
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     if app.config.get('FB_APP_ID') and app.config.get('FB_APP_SECRET'):
         app.run(host='0.0.0.0', port=port)
     else:
         print 'Cannot start application without Facebook App Id and Secret set'
-
-@app.route('/search/', methods=['POST'])
-def search():
-	print search.main(request.args[data])
-	return
