@@ -5,7 +5,9 @@ import strip
 
 #add stuff for getting the json from the server here
 
-f = open("ru_crushes-user_timeline.json","r")
+FILE_LEN = 200
+
+f = open("new.json","r")
 nf = open("cache.json","a")
 fcheck = open("curmax.txt","r")
 
@@ -18,10 +20,12 @@ f.close()
 trimmedList = []
 
 i = 0
-while i<200:
-	if int(uncleanList[199-i]['id']) > curMax:
-		trimmedList.insert(0,uncleanList[199-i])
-		curMax = int(uncleanList[199-i]['id'])
+while i<FILE_LEN:
+	if int(uncleanList[FILE_LEN-1-i]['id']) > curMax:
+		trimmedList.insert(0,uncleanList[FILE_LEN-1-i])
+		curMax = int(uncleanList[FILE_LEN-1-i]['id'])
+	else:
+		break
 	i+=1
 
 fwrite = open("curmax.txt","w")
