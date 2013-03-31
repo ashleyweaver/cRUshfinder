@@ -365,8 +365,7 @@ width: 850px;
 }    
 
 #footer .copyright {
-float: right;
 padding: 30px 0;
 width: 425px;
-text-align: center;
+text-align: left;
 }
