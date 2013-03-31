@@ -45,7 +45,6 @@
 	<div id="output">test</div>
 	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript">
-	alert("alert!");
 		$("#searchButton").click(function(){
 			alert("click");
 			$.ajax({
@@ -57,7 +56,7 @@
 					//var decodedJson = $.parseJSON(data);
 					var decodedJson = "lol";
 					// do stuff with the decoded data
-					$("#output").val(decodedJson);
+					$("#output").text(decodedJson);
 				});
 		});
 	</script>
