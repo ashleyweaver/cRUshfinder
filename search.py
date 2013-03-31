@@ -41,6 +41,6 @@ def main(nam,fullMatch,fromDate):
 	idArray = []
 	while len(postList)>0:
 		idArray.append(postList.pop()['id'])
-	#print(idArray)
+	print(idArray)
 
 	return idArray
