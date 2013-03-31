@@ -62,6 +62,8 @@
 					{
 						$.ajax({
 							url: baseUrl + "?id=" + decodedJson[i],
+								dataType: 'jsonp',
+								crossDomain: true,
 							success: function(data){
 									var embed = $.parseJSON(data);
 								$('#output').append(embed.html);	
