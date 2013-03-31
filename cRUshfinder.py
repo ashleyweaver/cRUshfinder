@@ -214,7 +214,7 @@ def close():
 @app.route('/search', methods=['GET'])
 def search():
 	search_results = ourSearch.main(request.args['data'], '')
-	jsonified = json.write(search_results)
+	jsonified = json.dumps(search_results)
 	jsonified.statusCode = 200
 	return jsonified
 
