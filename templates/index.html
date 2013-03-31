@@ -55,10 +55,8 @@
 				error:function(){ 
 					console.log("YOU FAILED MUTHAFUCKA");
 				}}).done(function(data){
-					//var decodedJson = $.parseJSON(data);
-					alert("click");
-					var decodedJson = "lol";
-					// do stuff with the decoded data
+					var decodedJson = $.parseJSON(data);
+					console.log(decodedJson);
 					$("#output").text(decodedJson);
 				});
 		});
