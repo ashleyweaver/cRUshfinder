@@ -211,14 +211,14 @@ def get_channel():
 def close():
     return render_template('close.html')
 
+@app.route('/search/', methods=['POST'])
+def search():
+	print search.main(request.args[data])
+	return
+
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     if app.config.get('FB_APP_ID') and app.config.get('FB_APP_SECRET'):
         app.run(host='0.0.0.0', port=port)
     else:
         print 'Cannot start application without Facebook App Id and Secret set'
-
-@app.route('/search/', methods=['POST'])
-def search():
-	print search.main(request.args[data])
-	return
