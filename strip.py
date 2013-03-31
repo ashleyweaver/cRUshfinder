@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+import string
 import simplejson as json
 from operator import itemgetter
 
@@ -19,20 +20,13 @@ f.close()
 cleanedList = []
 
 for item in uncleanList:
-	words = str.split(item["text"])
+	words = string.split(item["text"])
 	newWords = []
-	#for i,word in enumerate(words):
-	#	word = str.lower(word)
-	#	for rmWord in removedWords:
-	#		if rmWord == word:
-	#			del words[i]
-	#			i-=1
-	#			break
 	while len(words)>0:
 		# This lowercases the words, strips punctuation, then removes mid-word apostrophes to
 		# handle posessives. I don't know whether anyone is going to hashtag the name of the
 		# person they have a crush on so I included octothorpes in the punctuation filter.
-		word = str.split(str.strip(str.lower(words.pop()),",.!?';:#"),"'")[0]
+		word = string.split(string.strip(string.lower(words.pop()),",.!?';:#"),"'")[0]
 		
 		add = True
 		for rmWord in removedWords:
