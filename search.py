@@ -1,8 +1,9 @@
+import string
 import simplejson as json
 from operator import itemgetter
 
 def main(nam,fromDate):
-	names = str.split(str.lower(nam))
+	names = string.split(string.lower(nam))
 	f = open("ru_crushes-clean.json","r")
 	postList = json.load(f)
 	f.close()
@@ -11,7 +12,7 @@ def main(nam,fromDate):
 	for name in names:
 		for item in postList:
 			for word in item["words"]:
-				word = str.lower(word)
+				word = string.lower(word)
 				if word == name:
 					item["coincidence"]+=1
 					break
