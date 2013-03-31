@@ -12,6 +12,9 @@ from base64 import urlsafe_b64decode, urlsafe_b64encode
 import requests
 from flask import Flask, request, redirect, render_template, url_for
 
+import search.py
+import strip.py
+
 FB_APP_ID = os.environ.get('FACEBOOK_APP_ID')
 requests = requests.session()
 
@@ -218,5 +221,5 @@ if __name__ == '__main__':
 
 @app.route('/search/', methods=['POST'])
 def search():
-#	print dansfunction(request.args[data])
+	print search(request.args[data])
 	return
