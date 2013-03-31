@@ -213,9 +213,10 @@ def close():
 
 @app.route('/search', methods=['GET'])
 def search():
-	response = ourSearch.main(request.args['data'], '')
-	response.status_code=200
-	return response
+	search_results = ourSearch.main(request.args['data'], '')
+	jsonified = json.encodeJSON(search_results)
+	jsonified.statusCode = 200
+	return jsonified
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
