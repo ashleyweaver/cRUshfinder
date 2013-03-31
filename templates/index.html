@@ -29,18 +29,6 @@
 	{% block content %}
 	<section class="clearfix" id="samples" style="text-align: center">
 		<h1>Search for your Friends on Rutgers Crushes!</h1>
-		<div class="list">
-			<h3>A few of your friends</h3>
-			<ul class="friends">{% for friend in friends.data %}
-				<li>
-					<a href="#" onclick="window.open('http://www.facebook.com/{{friend.id}}')">
-						<img src="https://graph.facebook.com/{{friend.id}}/picture" alt="{{friend.name}}">
-							{{friend.name}}
-					</a>
-				</li>
-				{% endfor %}
-			</ul>
-		</div>
 		<input type="text" name="SearchField" id="searchField" style="border-margin: 5px" hint="Name or Keyword" /> 
 		<button id="searchButton">Search</button>
 		<label><input type="checkbox" id="checkbox" style="color: #656565"/>Exact matches only?</label>
