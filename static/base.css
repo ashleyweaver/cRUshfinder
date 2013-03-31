@@ -38,6 +38,13 @@ h1 {
     color:#000;
     border:#8c9cad 1px solid;
 }
+div.centre
+{
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* ------------------------------------------ */
 
