@@ -1,10 +1,5 @@
 <!DOCTYPE html>
 <head>
-	<script>
-		function search() {
-			<!--do stuff-->
-		}
-	</script>
 </head>
 <body style="background-color: #5f6a72">
   {% extends "base.html" %}
@@ -47,9 +42,25 @@
 			</ul>
 		</div>
 		<form>
-			<input type="text" name="Name" value="Name" style="border-margin: 5px"><br>
-			<button onClick="search()" style="border-margin: 5px">Search</button>
+			<input type="text" name="NameField" value="Name" id="searchField" style="border-margin: 5px"><br>
+			<button  style="border-margin: 5px" id="searchButton">Search</button>
 		</form>
 	</section>
 	{% endblock%}
 </body>
+<script type="text/javascript" src="jquery.js">
+</script>
+<script type="text/javascript">
+	$("#searchButton").click(function(){
+		$.ajax([
+			url:"/search",
+			data:[
+				data: $("#searchField").val()
+			],
+			success: function(data){
+				var decodedJson = $.parseJSON(data);
+				// do stuff with the decoded data
+			}
+			]);
+	});
+</script>

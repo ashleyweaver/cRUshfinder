@@ -215,3 +215,8 @@ if __name__ == '__main__':
         app.run(host='0.0.0.0', port=port)
     else:
         print 'Cannot start application without Facebook App Id and Secret set'
+
+@app.route('/search/', methods=['POST'])
+def search():
+#	print dansfunction(request.args[data])
+	return
