@@ -48,8 +48,7 @@
 	</section>
 	{% endblock%}
 </body>
-<script type="text/javascript" src="jquery.js">
-</script>
+<script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
 	$("#searchButton").click(function(){
 		$.ajax([
@@ -61,6 +60,6 @@
 				var decodedJson = $.parseJSON(data);
 				// do stuff with the decoded data
 			}
-			]);
+		]);
 	});
 </script>
