@@ -53,14 +53,13 @@
 		
 		$("#searchButton").click(function(){
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
-			alert(($("#checkbox")).is(":checked"))
-			alert(($("#checkbox")).attr('checked'))
+			alert(($("#checkbox")).is(":checked")?1:0)
 			$.ajax({
 				url:"/search",
 				type: 'GET',
 				data:{
-					data: $("#searchField").val(),
-					exact: ($("#checkbox")).is(":checked")
+					data: $("#searchField").val()
+					exact: ($("#checkbox")).is(":checked")?1:0
 				},
 				error:function(){ 
 					console.log("error");
