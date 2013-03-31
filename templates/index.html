@@ -64,7 +64,7 @@
 				type: 'GET',
 				data:{
 					data: $("#searchField").val(),
-					exact: ($("#checkbox")).is(":checked")?True:False
+					exact: ($("#checkbox")).is(":checked")?'True':''
 				},
 				error:function(){ 
 					console.log("error");
