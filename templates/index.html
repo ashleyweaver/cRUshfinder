@@ -65,10 +65,7 @@
 								dataType: 'jsonp',
 								crossDomain: true,
 							success: function(data){
-									var embed = $.parseJSON(data);
-								console.log(data);
-								console.log('embed is ' + embed);
-								$('#output').append(embed.html);	
+								$('#output').append(data.html);	
 						}
 					});
 					console.log(decodedJson);
