@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<head></head>
+<head>
+	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+</head>
 <body style="background-color: #5f6a72">
   {% extends "base.html" %}
 
@@ -39,8 +41,7 @@
 				{% endfor %}
 			</ul>
 		</div>
-		<input type="text" name="SearchField" id="searchField" style="border-margin: 5px" /> 
-			<label class="hintText">Name or Keyword</label>
+		<input type="text" name="SearchField" id="searchField" style="border-margin: 5px" hint="Name or Keyword" /> 
 		<button id="searchButton">Search</button>
 		<label><input type="checkbox" id="checkbox" style="color: #656565"/>Exact matches only?</label>
 		<div>
@@ -54,9 +55,8 @@
 		</div>
 	</div>
 	<div id="output"></div>
-	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
+
 	<script type="text/javascript">
-		
 		$("#searchButton").click(function(){
 			$("#output").empty();
 			var baseUrl = "https://api.twitter.com/1/statuses/oembed.json"
@@ -118,7 +118,6 @@
 			{% endfor %}
 			});
 	</script>
-
 	{% endblock %}
 </body>
 
