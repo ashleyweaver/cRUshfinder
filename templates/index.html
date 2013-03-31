@@ -48,15 +48,18 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
 	$("#searchButton").click(function(){
+		var decodedJson = "lol";
+		$('#output').val(decodedJson);
 		$.ajax([
 			url:"/search",
 			data:[
 				data: $("#searchField").val()
 			],
 			success: function(data){
-				var decodedJson = $.parseJSON(data);
-				$('#output').load(decodedJson);
+				//var decodedJson = $.parseJSON(data);
+				var decodedJson = "lol";
 				// do stuff with the decoded data
+				$('#output').val(decodedJson);
 			}
 		]);
 	});
