@@ -213,7 +213,7 @@ def close():
 
 @app.route('/search', methods=['GET'])
 def search():
-	response = ourSearch.main(request.args['data'])
+	response = ourSearch.main(request.args['data']. '')
 	response.status_code=200
 	return response
 
