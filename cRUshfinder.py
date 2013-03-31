@@ -213,7 +213,7 @@ def close():
 
 @app.route('/search', methods=['GET'])
 def search():
-	search_results = ourSearch.main(request.args['data'],0,'')#request.args['exact'], '')
+	search_results = ourSearch.main(request.args['data'],request.args['exact'], '')
 	jsonified = json.dumps(search_results)
 	return jsonified
 
