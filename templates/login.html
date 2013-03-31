@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 
 {% block topbar %}
-
-
-  <div id="fb-root"></div>
-  <h1>Welcome to cRUsh finder</h1>
+<html style="background-color: #656565">
+<body style="background-color: #5f6a72; margin:auto">
+  <div id="fb-root" ></div>
+  <h1 style=" font-size: 40px; color: black">Welcome to cRUsh finder</h1>
   <div id="login-flow">
     <fb:login-button perms="email,offline_access" show-faces="true"></fb:login-button>
   </div>
@@ -13,3 +13,5 @@
 
 {% block content %}
 {% endblock %}
+</body>
+</html>
