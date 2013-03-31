@@ -40,9 +40,9 @@
 			</ul>
 		</div>
 		<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px"><br>
-		<div id="searchButton">Search</div>		
+		<button id="searchButton">Search</button>		
 	</section>
-	<div id="output">test</div>
+	<div id="output"></div>
 	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript">
 		
@@ -55,7 +55,7 @@
 					data: $("#searchField").val()
 				},
 				error:function(){ 
-					console.log("YOU FAILED MUTHAFUCKA");
+					console.log("error");
 				}}).done(function(data){
 					var decodedJson = $.parseJSON(data);
 					for(var i = 0; i < decodedJson.length; i++)
