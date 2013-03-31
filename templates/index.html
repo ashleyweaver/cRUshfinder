@@ -54,7 +54,8 @@
 				data: $("#searchField").val()
 			],
 			success: function(data){
-				var decodedJson = $.parseJSON(data);
+				//var decodedJson = $.parseJSON(data);
+				var decodedJson = "lol";
 				$('#output').load(decodedJson);
 				// do stuff with the decoded data
 			}
