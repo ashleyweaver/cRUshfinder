@@ -48,8 +48,10 @@
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
 	$("#searchButton").click(function(){
+		alert("click");
 		$.ajax([
 			url:"/search",
+			type: 'POST',
 			data:[
 				data: $("#searchField").val()
 			],
