@@ -45,7 +45,9 @@
 	<div id="output">test</div>
 	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript">
+		
 		$("#searchButton").click(function(){
+			var baseUrl = "https://twitter.com/ru-crushes/status/oembed.json"
 			$.ajax({
 				url:"/search",
 				type: 'GET',
@@ -56,6 +58,15 @@
 					console.log("YOU FAILED MUTHAFUCKA");
 				}}).done(function(data){
 					var decodedJson = $.parseJSON(data);
+					for(var i = 0; i < decodedJson.length; i++)
+					{
+						$.ajax({
+							url: baseUrl + "?id=" + decodedJson[i],
+							success: function(data){
+									var embed = $.parseJSON(data);
+								$('#output').append(embed.html);	
+						});
+					}
 					console.log(decodedJson);
 					$("#output").text(decodedJson);
 				});
