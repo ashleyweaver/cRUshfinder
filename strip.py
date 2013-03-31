@@ -20,14 +20,27 @@ def main(uncleanList):
 			# handle posessives. I don't know whether anyone is going to hashtag the name of the
 			# person they have a crush on so I included octothorpes in the punctuation filter.
 			word = string.split(string.strip(string.lower(words.pop()),",.!?';:#"),"'")[0]
-		
-			add = True
-			for rmWord in removedWords:
-				if rmWord == word:
-					add = False
-					break
-			if add:
-				newWords.append(word)
+			
+			# This handles mid-word periods because half the people who post on this Twitter
+			# feed are dumbasses.
+			if "." in word:
+				subwords = string.split(word)
+				for subword in subwords:
+					add = True
+					for rmWord in removedWords:
+						if rmWord == subword:
+							add = False
+							break
+					if add:
+						newWords.append(subword)
+			else:
+				add = True
+				for rmWord in removedWords:
+					if rmWord == word:
+						add = False
+						break
+				if add:
+					newWords.append(word)
 		cleanedItem = {"words" : newWords,"id" : item["id_str"],"date" : item["created_at"],"coincidence":0}
 		cleanedList.append(cleanedItem)
 	return cleanedList
