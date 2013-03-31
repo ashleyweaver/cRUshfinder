@@ -213,9 +213,9 @@ def close():
 
 @app.route('/search/', methods=['GET'])
 def search():
-#	print search.main(request.args[data])
-	print "yup"
-	return
+	response = search.main(request.args[data])
+	response.status_code=200
+	return response
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
