@@ -12,7 +12,7 @@ from base64 import urlsafe_b64decode, urlsafe_b64encode
 import requests
 from flask import Flask, request, redirect, render_template, url_for
 
-import search
+import search as ourSearch
 
 FB_APP_ID = os.environ.get('FACEBOOK_APP_ID')
 requests = requests.session()
@@ -211,9 +211,9 @@ def get_channel():
 def close():
     return render_template('close.html')
 
-@app.route('/search/', methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search():
-	response = search.main(request.args[data])
+	response = ourSearch.main(request.args['data'], '')
 	response.status_code=200
 	return response
 
