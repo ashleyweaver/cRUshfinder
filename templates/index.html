@@ -44,6 +44,7 @@
 	</section>
 	<div id="output">test</div>
 	{% endblock %}
+<<<<<<< HEAD
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript">
 		$("#searchButton").click(function(){
@@ -63,4 +64,26 @@
 			]);
 		});
 	</script>
+=======
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	$("#searchButton").click(function(){
+		alert("click");
+		$.ajax([
+			url:"/search",
+			type: 'POST',
+			data:[
+				data: $("#searchField").val()
+			],
+			success: function(data){
+				//var decodedJson = $.parseJSON(data);
+				var decodedJson = "lol";
+				// do stuff with the decoded data
+				$("#output").val(decodedJson);
+			}
+		]);
+	});
+</script>
+
+>>>>>>> a6f0c73380b0fcc535c03494b32d48e32010fef6
 </body>
