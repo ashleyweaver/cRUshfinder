@@ -48,7 +48,7 @@
 	alert("alert!");
 		$("#searchButton").click(function(){
 			alert("click");
-			$.ajax([
+			$.ajax(
 				url:"/search",
 			//	type: 'POST',
 				data:[
@@ -60,7 +60,7 @@
 					// do stuff with the decoded data
 					$("#output").val(decodedJson);
 				}
-			]);
+			);
 		});
 	</script>
 	{% endblock %}
