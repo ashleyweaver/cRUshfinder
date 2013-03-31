@@ -48,18 +48,17 @@
 	alert("alert!");
 		$("#searchButton").click(function(){
 			alert("click");
-			$.ajax(
+			$.ajax({
 				url:"/search",
 			//	type: 'POST',
-				data:[
+				data:{
 					data: $("#searchField").val()
-				]).done(function(data){
+				}}).done(function(data){
 					//var decodedJson = $.parseJSON(data);
 					var decodedJson = "lol";
 					// do stuff with the decoded data
 					$("#output").val(decodedJson);
-				}
-			);
+				});
 		});
 	</script>
 	{% endblock %}
