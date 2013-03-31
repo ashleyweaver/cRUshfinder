@@ -40,17 +40,17 @@
 			</ul>
 		</div>
 		<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px"><br>
-		<button  style="border-margin: 5px" id="searchButton">Search</button>
-		
+		<div id="searchButton">Search</div>		
 	</section>
 	<div id="output">test</div>
 	{% endblock %}
-</body>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript">
 	$("#searchButton").click(function(){
+		alert("click");
 		$.ajax([
 			url:"/search",
+			type: 'POST',
 			data:[
 				data: $("#searchField").val()
 			],
@@ -63,3 +63,5 @@
 		]);
 	});
 </script>
+
+</body>
