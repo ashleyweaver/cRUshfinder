@@ -39,8 +39,9 @@
 				{% endfor %}
 			</ul>
 		</div>
-			<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px"><br>
-			<button  style="border-margin: 5px" id="searchButton">Search</button>
+		<input type="text" name="SearchField" value="Name" id="searchField" style="border-margin: 5px"><br>
+		<button  style="border-margin: 5px" id="searchButton">Search</button>
+		<div id="output"></div>
 	</section>
 	{% endblock%}
 </body>
@@ -54,6 +55,7 @@
 			],
 			success: function(data){
 				var decodedJson = $.parseJSON(data);
+				$('#output').load(decodedJson);
 				// do stuff with the decoded data
 			}
 		]);
