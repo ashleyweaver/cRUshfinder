@@ -51,8 +51,8 @@
 				type: 'GET',
 				data:{
 					data: $("#searchField").val()
-				}
-				failure:function(){ 
+				},
+				error:function(){ 
 					console.log("YOU FAILED MUTHAFUCKA");
 				}).done(function(data){
 					//var decodedJson = $.parseJSON(data);
