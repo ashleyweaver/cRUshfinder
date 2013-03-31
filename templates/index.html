@@ -46,7 +46,6 @@
 	<script type="text/javascript" src="/static/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript">
 		$("#searchButton").click(function(){
-			alert("click");
 			$.ajax({
 				url:"/search",
 			//	type: 'POST',
@@ -54,6 +53,7 @@
 					data: $("#searchField").val()
 				}}).done(function(data){
 					//var decodedJson = $.parseJSON(data);
+					alert("click");
 					var decodedJson = "lol";
 					// do stuff with the decoded data
 					$("#output").text(decodedJson);
