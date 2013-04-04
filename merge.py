@@ -25,8 +25,8 @@ while i<FILE_LEN:
 	if int(uncleanList[FILE_LEN-1-i]['id']) > curMax:
 		trimmedList.append(uncleanList[FILE_LEN-1-i])
 		curMax = int(uncleanList[FILE_LEN-1-i]['id'])
-	else:
-		break
+	#else:
+	#	break
 	i+=1
 
 fwrite = open("curmax.txt","w")
